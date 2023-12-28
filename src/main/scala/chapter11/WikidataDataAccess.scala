@@ -102,18 +102,18 @@ object WikidataDataAccess {
     }
   }
 
-  def parseAttractions(s: QuerySolution): IO[Attraction] = {
+  def parseAttractions(solution: QuerySolution): IO[Attraction] = {
     IO.delay {
       Attraction(
-        name = s.getLiteral("attractionLabel").getString(),
+        name = solution.getLiteral("attractionLabel").getString(),
         description =
-          if s.contains("description")
-          then Some(s.getLiteral("description").getString())
+          if solution.contains("description")
+          then Some(solution.getLiteral("description").getString())
           else None,
         location = Location(
-          id = LocationId(s.getResource("location").getLocalName()),
-          name = s.getLiteral("locationLabel").getString(),
-          population = s.getLiteral("population").getInt()
+          id = LocationId(solution.getResource("location").getLocalName()),
+          name = solution.getLiteral("locationLabel").getString(),
+          population = solution.getLiteral("population").getInt()
         )
       )
     }

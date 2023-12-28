@@ -36,10 +36,10 @@ object SchedulingMeetings {
   }
 
   def possibleMeetings(
-      existingMeetings: List[MeetingTime],
-      startHour: Int,
-      endHour: Int,
-      lengthHours: Int
+    existingMeetings: List[MeetingTime],
+    startHour: Int,
+    endHour: Int,
+    lengthHours: Int
   ): List[MeetingTime] = {
     List
       .range(startHour, endHour - lengthHours + 1)

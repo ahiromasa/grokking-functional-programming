@@ -93,8 +93,8 @@ object TvShows {
 //   }
 
   def addOrResign(
-      parsedShows: Either[String, List[TvShow]],
-      newParsedShow: Either[String, TvShow]
+    parsedShows: Either[String, List[TvShow]],
+    newParsedShow: Either[String, TvShow]
   ): Either[String, List[TvShow]] = {
     for {
       shows <- parsedShows

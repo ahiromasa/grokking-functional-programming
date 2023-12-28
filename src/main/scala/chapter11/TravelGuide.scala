@@ -118,8 +118,11 @@ object TravelGuide {
       .unsafeRunSync()
   }
 
-  def cachedExecQuery(connection: RDFConnection, cache: Ref[IO, Map[String, List[QuerySolution]]])(
-      query: String
+  def cachedExecQuery(
+    connection: RDFConnection,
+    cache: Ref[IO, Map[String, List[QuerySolution]]]
+  )(
+    query: String
   ): IO[List[QuerySolution]] = {
     for {
       cachedQueries <- cache.get

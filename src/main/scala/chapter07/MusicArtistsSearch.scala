@@ -63,10 +63,10 @@ object MusicArtistsSearch {
     }
 
     case class Artist(
-        name: String,
-        genre: MusicGenre,
-        origin: Location,
-        yearsActive: YearsActive
+      name: String,
+      genre: MusicGenre,
+      origin: Location,
+      yearsActive: YearsActive
     )
   }
 
