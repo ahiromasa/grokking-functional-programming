@@ -13,6 +13,7 @@ lazy val root = project
     scalaVersion := scala3Version,
     libraryDependencies ++= Seq(
       "org.scalameta" %% "munit" % "0.7.29" % Test,
+      "org.scalameta" %% "munit-scalacheck" % "0.7.29" % Test,
       "org.typelevel" %% "cats-core" % catsVersion,
       "org.typelevel" %% "cats-effect" % catsEffectVersion,
       "co.fs2" %% "fs2-core" % fs2Version,
